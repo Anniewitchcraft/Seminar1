@@ -1,41 +1,24 @@
-﻿// Напишите программу,
-// 1. которая будет выдавать название дня недели 
-// 2. по заданному номеру.
-// 3 -> Среда
-// 5 -> Пятница
+﻿// Задача 10: Напишите программу, 
+// которая принимает на вход трёхзначное число 
+// и на выходе показывает вторую цифру этого числа.
+// 456 -> 5
+// 782 -> 8
+// 918 -> 1
 
-string dayNumber;
-Console.WriteLine("Введите номер дня недели: ");
-dayNumber = Console.ReadLine();
-if (dayNumber == "1")
+
+Console.WriteLine("Введите трёхзначное число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+if (number < 0)
 {
-    Console.WriteLine($"{dayNumber} -> Понедельник");
-} 
-else if (dayNumber == "2")
-{
-    Console.WriteLine($"{dayNumber} -> Вторник");
-} 
-else if (dayNumber == "3")
-{
-    Console.WriteLine($"{dayNumber} -> Среда");
+    number *= -1;
 }
-else if (dayNumber == "4")
+if (number >= 100 && number <= 999) // && - и
 {
-    Console.WriteLine($"{dayNumber} -> Четверг");
+    int lastNumber = (number % 100 - number % 10) / 10; // %10 остаток от деления на 10
+    Console.WriteLine($"{number} -> {lastNumber}");
 }
-else if (dayNumber == "5")
-{
-    Console.WriteLine($"{dayNumber} -> Пятница");
-} 
-else if (dayNumber == "6")
-{
-    Console.WriteLine($"{dayNumber} -> Суббота");
-} 
-else if (dayNumber == "7")
-{
-    Console.WriteLine($"{dayNumber} -> Воскресенье");
-} 
 else
 {
-    Console.WriteLine("Ошибка ввода!");
+    Console.WriteLine($"Ошибка ввода!");
 }
