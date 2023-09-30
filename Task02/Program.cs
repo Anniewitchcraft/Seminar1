@@ -1,24 +1,23 @@
-﻿// Задача 10: Напишите программу, 
-// которая принимает на вход трёхзначное число 
-// и на выходе показывает вторую цифру этого числа.
-// 456 -> 5
-// 782 -> 8
-// 918 -> 1
+﻿// Задача 2: Напишите программу, 
+// которая на вход принимает два числа 
+// и выдаёт, какое число большее,
+// а какое меньшее.
+// a = 5; b = 7 -> max = 7
+// a = 2 b = 10 -> max = 10
+// a = -9 b = -3 -> max = -3
 
+int firstNumber, secondNumber;
 
-Console.WriteLine("Введите трёхзначное число: ");
-int number = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите первое число: ");
+firstNumber = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите второе число: ");
+secondNumber = Convert.ToInt32(Console.ReadLine());
 
-if (number < 0)
+if(firstNumber > secondNumber)
 {
-    number *= -1;
-}
-if (number >= 100 && number <= 999) // && - и
-{
-    int lastNumber = (number % 100 - number % 10) / 10; // %10 остаток от деления на 10
-    Console.WriteLine($"{number} -> {lastNumber}");
+    Console.WriteLine($"max = {firstNumber}");
 }
 else
 {
-    Console.WriteLine($"Ошибка ввода!");
+    Console.WriteLine($"max = {secondNumber}");
 }
